@@ -12,30 +12,20 @@ A multi-agent orchestration demo using Microsoft Agent Framework and Azure AI Fo
 
 ## Architecture
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    User Interface                           │
-└─────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────┐
-│                   Orchestrator Agent                         │
-│         (Routes requests to specialized agents)              │
-└─────────────────────────────────────────────────────────────┘
-            │              │              │
-            ▼              ▼              ▼
-     ┌──────────┐   ┌──────────┐   ┌──────────┐
-     │ HR Agent │   │ IT Agent │   │ Finance  │
-     │          │   │          │   │  Agent   │
-     └──────────┘   └──────────┘   └──────────┘
-            │              │              │
-            ▼              ▼              ▼
-     ┌──────────┐   ┌──────────┐   ┌──────────┐
-     │   HR     │   │   IT     │   │ Finance  │
-     │Knowledge │   │Knowledge │   │Knowledge │
-     │  Base    │   │  Base    │   │  Base    │
-     └──────────┘   └──────────┘   └──────────┘
-```
+![FoundryIQ + Agent Framework Architecture](docs/architecture.png)
+
+The architecture consists of the following components:
+
+- **Containers (Azure Container Apps)**: Hosts the Agent Framework for multi-agent orchestration
+- **Agent Service**: Contains the Orchestrator Agent and specialized domain agents
+  - **Orchestrator Agent**: Routes user questions to the appropriate specialized agent
+  - **HR Agent**: Handles HR-related queries using AI models and the HR Knowledge base
+  - **Products Agent**: Handles product-related queries with the Products Knowledge base
+  - **Marketing Agent**: Handles marketing-related queries with the Marketing Knowledge base
+  - **Other Agents**: Extensible architecture supports adding more specialized agents
+- **FoundryIQ Knowledge Bases**: Each agent connects to its own knowledge base that provides:
+  - **Indexed sources**: Azure AI Search, SharePoint, and other indexed data sources
+  - **Remote sources**: Bing, external APIs, and other remote data sources
 
 ## Prerequisites
 
@@ -148,7 +138,8 @@ azd deploy
 ├── .devcontainer/       # Dev container configuration
 ├── agents/              # Agent definitions and configurations
 │   ├── hr_agent/        # HR specialized agent
-│   ├── it_agent/        # IT specialized agent
+│   ├── products_agent/  # Products specialized agent
+│   ├── marketing_agent/ # Marketing specialized agent
 │   └── orchestrator/    # Main orchestrator agent
 ├── app/
 │   ├── backend/         # Python backend (FastAPI/Quart)
