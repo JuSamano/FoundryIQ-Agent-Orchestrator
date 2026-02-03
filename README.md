@@ -2,6 +2,8 @@
 
 A multi-agent orchestration demo using Microsoft Agent Framework SDK and Azure AI Foundry with FoundryIQ Knowledge Bases for grounded retrieval.
 
+![Demo Screenshot](docs/demo-screenshot.png)
+
 ## Features
 
 - **Multi-Agent Orchestration**: Intelligent routing of queries to specialized agents (HR, Products, Marketing)
