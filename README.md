@@ -4,6 +4,11 @@ A multi-agent orchestration demo using Microsoft Agent Framework SDK and Azure A
 
 ![Demo Screenshot](docs/demo-screenshot.png)
 
+## About
+
+This project is a personal derivative of https://github.com/leyredelacalzada/FoundryIQ-and-Agent-Framework-demo.git.
+This repository is not affiliated with, endorsed by, or supported by the original authors. It has been modified and adapted to operate with a different Azure resource configuration and deployment environment.
+
 ## Features
 
 - **Multi-Agent Orchestration**: Intelligent routing of queries to specialized agents (HR, Products, Marketing)
@@ -72,8 +77,8 @@ A multi-agent orchestration demo using Microsoft Agent Framework SDK and Azure A
 ### 1. Clone and Setup
 
 ```bash
-git clone https://github.com/leyredelacalzada/FoundryIQ-and-Agent-Framework-demo.git
-cd FoundryIQ-and-Agent-Framework-demo
+git clone https://github.com/JuSamano/FoundryIQ-Agent-Orchestrator.git
+cd FoundryIQ-Agent-Orchestrator
 
 # Create virtual environment
 python -m venv .venv
@@ -86,7 +91,7 @@ pip install -r requirements-dev.txt
 ### 2. Deploy Infrastructure
 
 ```bash
-az login && azd auth login
+az login; azd auth login
 azd up
 ```
 
