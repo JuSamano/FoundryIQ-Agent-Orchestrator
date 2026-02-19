@@ -3,7 +3,9 @@
 import asyncio
 import os
 from azure.identity.aio import DefaultAzureCredential
-from agent_framework import ChatAgent, ChatMessage, Role
+
+from agent_framework import Agent, Message, Content
+
 from agent_framework.azure import AzureAIAgentClient, AzureAISearchContextProvider
 
 SEARCH_ENDPOINT = os.getenv("AZURE_SEARCH_ENDPOINT", "https://srch-g5mlw6gto4s6i.search.windows.net")
@@ -33,7 +35,7 @@ async def run_marketing_agent(query: str) -> str:
             knowledge_base_output_mode="answer_synthesis",
         ) as kb_context,
     ):
-        agent = ChatAgent(
+        agent = Agent(
             chat_client=client,
             context_provider=kb_context,
             instructions=MARKETING_INSTRUCTIONS,
