@@ -6,8 +6,8 @@ from azure.identity.aio import DefaultAzureCredential
 from agent_framework import ChatAgent, ChatMessage, Role
 from agent_framework.azure import AzureAIAgentClient, AzureAISearchContextProvider
 
-SEARCH_ENDPOINT = os.getenv("AZURE_SEARCH_ENDPOINT", "https://srch-fiq-maf-demo.search.windows.net")
-PROJECT_ENDPOINT = os.getenv("AZURE_AI_PROJECT_ENDPOINT", "https://foundry-fiq-maf-demo.services.ai.azure.com/api/projects/proj1-fiq-maf-demo")
+SEARCH_ENDPOINT = os.getenv("AZURE_SEARCH_ENDPOINT", "https://srch-g5mlw6gto4s6i.search.windows.net")
+PROJECT_ENDPOINT = os.getenv("AZURE_AI_PROJECT_ENDPOINT", "https://jusamano-2099-resource.services.ai.azure.com/api/projects/jusamano-2099")
 MODEL = os.getenv("AZURE_OPENAI_DEPLOYMENT", "gpt-4.1")
 
 HR_INSTRUCTIONS = """You are an HR Specialist Agent for Zava Corporation.

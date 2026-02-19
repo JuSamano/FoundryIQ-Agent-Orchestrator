@@ -133,7 +133,7 @@ Try: "What is the PTO policy?" or "Tell me about the fitness watch"
 
 | Agent | Knowledge Base | Content |
 |-------|----------------|---------|
-| HR | kb1-hr | PTO policies, benefits, handbook |
+| HR    | kb1-hr | PTO policies, benefits, handbook |
 | Products | kb3-products | Product catalog, specs, pricing |
 | Marketing | kb2-marketing | Campaigns, brand guidelines |
 
